@@ -1,4 +1,4 @@
-name: Fetch Appstore Info
+name: bbang map health checker
 
 on:
   workflow_dispatch:
