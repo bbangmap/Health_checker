@@ -1,0 +1,23 @@
+name: Fetch Appstore Info
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node-version: "14.x"
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+      - run: npm install
+      - run: node Sources/health_check.js
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

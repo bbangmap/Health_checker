@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@slack/types": "^2.8.0",
+    "@slack/webhook": "^6.1.0",
+    "moment": "^2.29.4",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "request-promise-native": "^1.0.9"
+  }
+}
