@@ -16,8 +16,8 @@ const main = async () => {
         const response = await request(options);
 
         if (response.statusCode === 200) {
-            var message = '✅✅✅✅ Health check 성공 ✅✅✅✅  ' + env.HEALTH_CHECK_URL
-            slack.post(message);
+            var message = '✅✅✅✅ Health check 성공 ✅✅✅✅'
+            console.log(message);
         } else {
             var message = '🚨🚨🚨🚨 Health check 실패 🚨🚨🚨🚨  ' + env.HEALTH_CHECK_URL
             slack.post(message);
