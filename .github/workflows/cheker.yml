@@ -20,4 +20,3 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           HEALTH_CHECK_URL: ${{ secrets.HEALTH_CHECK_URL }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
