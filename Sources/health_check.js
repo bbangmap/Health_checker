@@ -19,7 +19,7 @@ const main = async () => {
             var message = '✅✅✅✅ Health check 성공 ✅✅✅✅'
             console.log(message);
         } else {
-            var message = '🚨🚨🚨🚨 Health check 실패 🚨🚨🚨🚨  <@U02FRDDT8KV> <@U02FRDHU02E> <@U02FNDA6E2Z> <@U04C3LL4VJ5> <@U02FJM0FA06>' + env.HEALTH_CHECK_URL
+            var message = '<@U02FRDDT8KV> <@U02FRDHU02E> <@U02FNDA6E2Z> <@U04C3LL4VJ5> <@U02FJM0FA06> \n🚨🚨🚨🚨 Health check 실패 🚨🚨🚨🚨 ' + env.HEALTH_CHECK_URL
             slack.post(message);
             throw new Error("Health check failed");
         }
