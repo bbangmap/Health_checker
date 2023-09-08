@@ -2,6 +2,7 @@ name: Send bbangmap dau
 
 on:
   workflow_dispatch:
+  schedule:
     - cron: '0 0 * * *'  # 매일 자정에 실행
 
 jobs:
