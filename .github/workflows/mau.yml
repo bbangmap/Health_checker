@@ -1,4 +1,4 @@
-name: Send bbangmap wau
+name: Send bbangmap mau
 
 on:
   workflow_dispatch:
@@ -25,4 +25,4 @@ jobs:
           AMPLITUDE_SECRET_KEY: ${{ secrets.AMPLITUDE_SECRET_KEY }}
           AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
           AMPLITUDE_SLACK_WEBHOOK_URL: ${{ secrets.AMPLITUDE_SLACK_WEBHOOK_URL }}
-      run: python Sources/amplitude_wau.py  # 여기에 Slack 메시지를 전송하는 Python 스크립트 파일 이름을 넣으세요.
+      run: python Sources/amplitude_mau.py  # 여기에 Slack 메시지를 전송하는 Python 스크립트 파일 이름을 넣으세요.
