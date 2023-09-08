@@ -17,7 +17,8 @@ def fetch_event_segmentation(event_type, start_date, end_date, i=1):
     params = {
         'e': event_data,
         'start': start_date,
-        'end': end_date
+        'end': end_date,
+        "i": i
     }
     url_params = urlencode(params)
 

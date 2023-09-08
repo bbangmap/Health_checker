@@ -1,7 +1,6 @@
 from amplitude_event_api import fetch_event_segmentation
 from tracking_slack import send_to_slack
 from datetime import datetime, timedelta
-import os
 
 # 현재 날짜 가져오기
 today = datetime.now()
