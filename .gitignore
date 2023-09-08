@@ -104,4 +104,4 @@ dist
 
 # TernJS port file
 .tern-port
-Sources/__pycache__/amplitude_event_api.cpython-310.pyc
+*.pyc

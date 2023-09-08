@@ -1,0 +1,28 @@
+name: Send bbangmap wau
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'  # 매주 월요일 자정에 실행
+jobs:
+  send_slack_message:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install requests
+
+    - name: Run script
+      env:
+          AMPLITUDE_SECRET_KEY: ${{ secrets.AMPLITUDE_SECRET_KEY }}
+          AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
+          AMPLITUDE_SLACK_WEBHOOK_URL: ${{ secrets.AMPLITUDE_SLACK_WEBHOOK_URL }}
+      run: python Sources/amplitude_dau.py  # 여기에 Slack 메시지를 전송하는 Python 스크립트 파일 이름을 넣으세요.
