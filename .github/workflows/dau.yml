@@ -3,7 +3,7 @@ name: Send bbangmap dau
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 8 1/1 * ? *'  # 매일 자정에 실행
+    - cron: '0 8 * * *'
 
 jobs:
   send_slack_message:
