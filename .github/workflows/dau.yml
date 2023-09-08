@@ -22,5 +22,7 @@ jobs:
 
     - name: Run script
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          AMPLITUDE_SECRET_KEY: ${{ secrets.AMPLITUDE_SECRET_KEY }}
+          AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
+          AMPLITUDE_SLACK_WEBHOOK_URL: ${{ secrets.AMPLITUDE_SLACK_WEBHOOK_URL }}
       run: python Sources/amplitude_dau.py  # 여기에 Slack 메시지를 전송하는 Python 스크립트 파일 이름을 넣으세요.

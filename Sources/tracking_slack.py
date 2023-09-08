@@ -20,7 +20,7 @@ def send_to_slack(text: str) -> None:
 
     # Slack으로 POST 요청 보내기
     response = requests.post(
-        os.environ.get('AMPLITUDE_API_KEY'),
+        os.environ.get('AMPLITUDE_SLACK_WEBHOOK_URL'),
         data=json.dumps(message),
         headers={'Content-Type': 'application/json'},
         timeout=5  # 5초 동안 응답이 없으면 타임아웃
