@@ -3,7 +3,7 @@ name: Send bbangmap wau
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 23 * * SUN'
+    - cron: '0 1 * * MON'
 jobs:
   send_slack_message:
     runs-on: ubuntu-latest
