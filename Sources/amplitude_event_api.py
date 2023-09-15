@@ -4,39 +4,38 @@ import json
 import os
 from urllib.parse import urlencode
 
-def fetch_event_segmentation(event_type, start_date, end_date, i=1):
+def fetch_event_segmentation(event_type, start_date, end_date, i=1, m="uniques", group_by=None):
     # Base64 인코딩
     api_key=os.environ.get('AMPLITUDE_API_KEY')
     secret_key=os.environ.get('AMPLITUDE_SECRET_KEY')
     credentials = base64.b64encode(f"{api_key}:{secret_key}".encode("utf-8")).decode("utf-8")
 
     # 이벤트 타입을 JSON 형식으로 인코딩
-    event_data = json.dumps({"event_type": event_type})
+    event_data = {"event_type": event_type}
+    if group_by:
+        event_data['group_by'] = group_by
 
     # URL 인코딩
     params = {
-        'e': event_data,
+        'e': json.dumps(event_data, ensure_ascii=False),
         'start': start_date,
         'end': end_date,
-        "i": i
+        'i': i,
+        'm': m
     }
     url_params = urlencode(params)
 
     # API URL
     url = f"https://amplitude.com/api/2/events/segmentation?{url_params}"
 
-    # HTTP GET 요청
+    headers={"Authorization": f"Basic {credentials}"}
+
     try:
-        response = requests.get(
-            url,
-            headers={
-                "Authorization": f"Basic {credentials}"
-            },
-            timeout=5
-        )
+        response = requests.get(url, headers=headers, timeout=5)
 
     except requests.exceptions.Timeout:
         print("The request timed out.")
+    print(f"Sending request to {url} with headers {headers}")
 
     # 응답 처리
     if response.status_code == 200:
