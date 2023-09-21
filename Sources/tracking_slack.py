@@ -2,6 +2,8 @@ import json
 import requests
 import os
 
+SLACK_WEBHOOK_URL = os.environ.get('AMPLITUDE_SLACK_WEBHOOK_URL')
+
 def send_to_slack(text: str) -> None:
     """
     Slack으로 텍스트 메시지를 전송하는 함수
@@ -32,3 +34,6 @@ def send_to_slack(text: str) -> None:
     else:
         print(f"Failed to send message. Status code: {response.status_code}, Reason: {response.text}")
 
+def send_slack_message_with_payload(payload):
+    response = requests.post(SLACK_WEBHOOK_URL, json=payload)
+    return response.status_code == 200
