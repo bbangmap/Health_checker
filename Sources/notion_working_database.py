@@ -106,7 +106,7 @@ def main():
         'text': '내일 끝나는 작업 목록',
         'channel': '#0-작업-순서-공유',
         'username': '작업 알리미',
-        'icon_emoji': ':robot:',
+        'icon_emoji': ':slack:',
         'attachments': []
     }
     if not tasks_ending_tomorrow:
