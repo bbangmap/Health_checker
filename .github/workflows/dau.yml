@@ -26,6 +26,8 @@ jobs:
           AMPLITUDE_SECRET_KEY: ${{ secrets.AMPLITUDE_SECRET_KEY }}
           AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
           AMPLITUDE_SLACK_WEBHOOK_URL: ${{ secrets.AMPLITUDE_SLACK_WEBHOOK_URL }}
+          BBANGMAP_NOTION_DATABASE_KEY: ${{ secrets.BBANGMAP_NOTION_DATABASE_KEY }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       run: |
         python Sources/amplitude_dau.py
         python Sources/notion_working_database.py
