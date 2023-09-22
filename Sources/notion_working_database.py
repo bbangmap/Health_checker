@@ -32,6 +32,7 @@ def get_pages(num_pages=None):
 
     response = requests.post(url, json=payload, headers=headers)
     data = response.json()
+    print(response.status_code)
 
     results = data["results"]
     while data["has_more"] and get_all:
