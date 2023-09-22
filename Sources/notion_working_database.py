@@ -34,7 +34,12 @@ def get_pages(num_pages=None):
     data = response.json()
     print(response.status_code)
 
-    results = data["results"]
+    try:
+        results = data["results"]
+    except KeyError:
+        print("Unexpected response:", data)
+    return []
+
     while data["has_more"] and get_all:
         payload = {"page_size": page_size, "start_cursor": data["next_cursor"]}
         response = requests.post(url, json=payload, headers=headers)
