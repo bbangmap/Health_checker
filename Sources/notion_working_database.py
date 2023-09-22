@@ -4,8 +4,8 @@ import requests
 import json
 import os
 
-NOTION_TOKEN = os.environ.get("NOTION_API_KEY")
-DATABASE_ID = os.environ.get("BBANGMAP_NOTION_DATABASE_KEY")
+NOTION_TOKEN = process.env.NOTION_API_KEY
+DATABASE_ID = process.env.BBANGMAP_NOTION_DATABASE_KEY
 
 headers = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
