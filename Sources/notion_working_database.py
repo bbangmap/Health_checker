@@ -38,7 +38,6 @@ def get_pages(num_pages=None):
         results = data["results"]
     except KeyError:
         print("Unexpected response:", data)
-    return []
 
     while data["has_more"] and get_all:
         payload = {"page_size": page_size, "start_cursor": data["next_cursor"]}
@@ -50,7 +49,7 @@ def get_pages(num_pages=None):
 
 def main():
     today = datetime.now().date()
-    tomorrow_date = today + timedelta(days=0)
+    tomorrow_date = today + timedelta(days=1)
 
     pages = get_pages()
     filtered_pages = []
