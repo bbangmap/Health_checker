@@ -72,7 +72,7 @@ def main():
             start_date = datetime.fromisoformat(start_date_str)
             end_date = datetime.fromisoformat(end_date_str)
 
-            if start_date.date() < today and end_date.date() > today:
+            if start_date.date() <= today and end_date.date() >= today:
                 filtered_pages.append(page)
 
     for page in filtered_pages:
