@@ -103,7 +103,7 @@ def main():
         end_date_str = task.get('End Date', '')
         if end_date_str:
             end_date = datetime.strptime(end_date_str, '%Y-%m-%d').date()
-            if end_date == tomorrow_date:
+            if end_date == today or end_date == tomorrow_date:  # 이 부분을 수정
                 tasks_ending_tomorrow.append(task)
 
 
