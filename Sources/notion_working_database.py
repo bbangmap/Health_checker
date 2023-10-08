@@ -128,9 +128,9 @@ def main():
                 'title': task['Name'],
                 'fields': [
                     {'title': '담당자', 'value': task['담당자 이름'], 'short': True},
-                    {'title': 'Start Date', 'value': task['Start Date'], 'short': True},
-                    {'title': 'End Date', 'value': task['End Date'], 'short': True},
                     {'title': '카드 링크', 'value': task['카드 링크'], 'short': False}
+                    {'title': '시작일', 'value': task['Start Date'], 'short': True},
+                    {'title': '종료일', 'value': task['End Date'], 'short': True},
                 ]
             }
             payload['attachments'].append(attachment)
