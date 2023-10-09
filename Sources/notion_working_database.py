@@ -94,7 +94,7 @@ def main():
                                  '담당자 이름': person,
                                  '카드 링크': url,
                                  'Start Date': start_date,
-                                 'End Date': end_date,
+                                 'End Date': end_date
                                  })
         except Exception as e:
             continue
