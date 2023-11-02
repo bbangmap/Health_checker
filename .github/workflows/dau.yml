@@ -30,4 +30,5 @@ jobs:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       run: |
         python Sources/amplitude_dau.py
+        python Sources/amplitude_review_write.py
         python Sources/notion_working_database.py
