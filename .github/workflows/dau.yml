@@ -28,6 +28,8 @@ jobs:
           AMPLITUDE_SLACK_WEBHOOK_URL: ${{ secrets.AMPLITUDE_SLACK_WEBHOOK_URL }}
           BBANGMAP_NOTION_DATABASE_KEY: ${{ secrets.BBANGMAP_NOTION_DATABASE_KEY }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          GOOGLE_SHEETS_CREDS_JSON: ${{ secrets.GOOGLE_SHEETS_CREDS_JSON }}
+          SHEETS_ID: ${{ secrets.SHEETS_ID }}
       run: |
         python Sources/amplitude_dau.py
         python Sources/amplitude_review_write.py
